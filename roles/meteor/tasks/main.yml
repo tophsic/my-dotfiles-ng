@@ -1,0 +1,4 @@
+---
+
+- name: Install meteor
+  shell: "curl https://install.meteor.com/ | sh"

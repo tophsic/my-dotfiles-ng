@@ -7,3 +7,4 @@
     - ohmyzsh
     - my-dotfiles
     - { role: pablocrivella.nvm, become: yes, become_method: sudo }
+    - meteor
