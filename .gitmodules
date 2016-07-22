@@ -55,3 +55,12 @@
 [submodule "files/.vim/bundle/Dockerfile.vim"]
 	path = files/.vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "ansible-role-nvm"]
+	path = roles/pablocrivella.nvm
+	url = https://github.com/pablocrivella/ansible-role-nvm.git
+[submodule "roles/ANXS.git"]
+	path = roles/ANXS.git
+	url = https://github.com/ANXS/git.git
+[submodule "roles/ANXS.build-essential"]
+	path = roles/ANXS.build-essential
+	url = https://github.com/ANXS/build-essential.git

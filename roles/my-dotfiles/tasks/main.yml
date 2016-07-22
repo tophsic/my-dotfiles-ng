@@ -5,12 +5,13 @@
   register: current_directory
 
 - name: Symlink config files into home
-  file: src={{ current_directory.stdout }}/files/{{ item }} dest={{ ansible_env.HOME}}/{{ item }} state=link
+  file: src={{ current_directory.stdout }}/files/{{ item }} dest={{ ansible_env.HOME}}/{{ item }} force=yes state=link
   with_items:
     - .gitconfig
     - .gitignore_global
     - .vimrc
     - .tmux.conf
+    - .zshrc
 
 - name: Remove .vim folder
   file: path={{ ansible_env.HOME}}/.vim state=absent
