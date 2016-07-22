@@ -1,0 +1,9 @@
+---
+
+- name: Check ohmyzsh presence
+  stat: path={{ ansible_env.HOME}}/.oh-my-zsh
+  register: check_ohmyzsh
+
+- name: Install ohmyzsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  when: check_ohmyzsh.stat.exists == false

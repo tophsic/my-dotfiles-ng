@@ -1,0 +1,6 @@
+---
+
+- name: install of basic packages (tmux, git, vim...)
+  apt: pkg=tmux,git,vim,zsh,git,exuberant-ctags state=latest
+  become: yes
+  become_method: sudo
