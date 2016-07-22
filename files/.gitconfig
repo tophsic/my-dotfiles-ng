@@ -1,0 +1,40 @@
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
+[color]
+    branch = auto
+    status = auto
+    interactive = auto
+    diff = auto
+[user]
+    name = Christophe Sicard
+    email = sicard.christophe@gmail.com
+[alias]
+    a = add
+    b = branch
+    d = diff
+    h = help
+    s = status -sb
+    co = checkout
+    dc = diff --cached
+    fc = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lo = log --stat
+    st = status
+    new = !sh -c 'git log "$@" @{1}..@{0}'
+    vim = !vim $(git ls-files -m -z | xargs -0 echo)
+    info = !~/.git-contrib/git-info
+    serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+    vimall = !vim $(git ls-files -m -o --exclude-standard -z | xargs -0 echo)
+    svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
+    fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
+    create = "!f(){ git init \"$@\"; if [ -n $@ ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
+    bmd = "!f(){ git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d; };f"
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[push]
+	default = current

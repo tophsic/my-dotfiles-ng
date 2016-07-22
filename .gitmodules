@@ -1,0 +1,57 @@
+[submodule "files/.vim/pathogen.vim"]
+	path = files/.vim/pathogen.vim
+	url = https://github.com/vim-scripts/pathogen.vim.git
+[submodule "files/.vim/bundle/vim-multiple-cursors"]
+	path = files/.vim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "files/.vim/bundle/vim-gitgutter"]
+	path = files/.vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "files/.vim/bundle/ultisnips"]
+	path = files/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "files/.vim/bundle/vim-buffergator"]
+	path = files/.vim/bundle/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "files/.vim/bundle/dbext.vim"]
+	path = files/.vim/bundle/dbext.vim
+	url = https://github.com/vim-scripts/dbext.vim.git
+[submodule "files/.vim/bundle/vim-snippets"]
+	path = files/.vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "files/.vim/bundle/vim-coffee-script"]
+	path = files/.vim/bundle/vim-coffee-script
+	url = https://github.com/vim-scripts/vim-coffee-script.git
+[submodule "files/.vim/bundle/import-js"]
+	path = files/.vim/bundle/import-js
+	url = https://github.com/trotzig/import-js.git
+[submodule "files/.vim/bundle/vdebug"]
+	path = files/.vim/bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
+[submodule "files/.vim/bundle/nerdtree"]
+	path = files/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "files/.vim/bundle/syntastic"]
+	path = files/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "files/.vim/bundle/editorconfig-vim"]
+	path = files/.vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "files/.vim/bundle/vim-jade"]
+	path = files/.vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "files/.vim/bundle/vim-easytags"]
+	path = files/.vim/bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags
+[submodule "files/.vim/bundle/vim-misc"]
+	path = files/.vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc
+[submodule "files/.vim/bundle/tagbar"]
+	path = files/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "files/.vim/bundle/command-t"]
+	path = files/.vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git
+[submodule "files/.vim/bundle/Dockerfile.vim"]
+	path = files/.vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git

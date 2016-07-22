@@ -1,0 +1,22 @@
+---
+
+- name: Find current directory
+  shell: pwd
+  register: current_directory
+
+- name: Symlink config files into home
+  file: src={{ current_directory.stdout }}/files/{{ item }} dest={{ ansible_env.HOME}}/{{ item }} state=link
+  with_items:
+    - .gitconfig
+    - .gitignore_global
+    - .vimrc
+    - .tmux.conf
+
+- name: Remove .vim folder
+  file: path={{ ansible_env.HOME}}/.vim state=absent
+
+- name: Symlink .vim folder
+  file: src={{ current_directory.stdout }}/files/.vim dest={{ ansible_env.HOME}}/.vim state=link force=yes
+
+- name: Install submodules
+  shell: chdir={{ current_directory.stdout }} git submodule update --init --recursive
