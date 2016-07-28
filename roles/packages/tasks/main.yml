@@ -1,4 +1,57 @@
 ---
 
+- name: display system version
+  debug:
+    msg: "{{ ansible_os_family }} - {{ ansible_distribution }} - {{ ansible_distribution_release }} - {{ ansible_distribution_version }}"
+  tags:
+    - debug
+
+- name: construct apt repository key
+  set_fact:
+    distribution_repository: "{{ ansible_distribution|lower }}-{{ ansible_distribution_release }}"
+  tags:
+    - debug
+    - install
+
+- name: install of basic packages (apt-transport-https, ca-certificates)
+  apt: pkg=apt-transport-https,ca-certificates state=latest
+  tags:
+    - install
+
+- name: add docker apt gpg key
+  apt_key: keyserver=p80.pool.sks-keyservers.net id=58118E89F3A912897C070ADBF76221572C52609D
+  tags:
+    - install
+
+- name: docker version to use on apt repository
+  debug: msg={{ distribution_repository }}
+  tags:
+    - debug
+
+- name: add docker apt repository
+  apt_repository:
+    repo: "deb https://apt.dockerproject.org/repo {{ distribution_repository }} main"
+    state: present
+    filename: "docker"
+  tags:
+    - install
+
+- name: purge unused packages
+  apt: pkg=lxc-docker state=absent purge=yes
+  tags:
+    - install
+
 - name: install of basic packages (tmux, git, vim...)
-  apt: pkg=tmux,git,vim,zsh,git,exuberant-ctags,mongodb-clients,keepassx state=latest
+  apt: pkg={{ packages_to_install }}
+  tags:
+    - install
+
+- name: start service docker
+  service: name=docker state=started
+  tags:
+    - install
+
+- name: give access to docker to current user
+  user: name={{ ansible_user_id }} groups=docker append=yes
+  tags:
+    - rights
