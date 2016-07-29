@@ -81,3 +81,4 @@ map € :call DmenuOpen("e")<cr>
 map àà :ls<cr>
 map "" :cn<cr>
 map jj :cp<cr>
+map çç :b#<cr>
