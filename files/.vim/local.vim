@@ -43,3 +43,7 @@ let g:calendar_google_task = 1
 "python del powerline_setup
 "set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 " }}}
+" UltiSnips {{{
+let g:UltiSnipsJumpForwardTrigger = "<c-l>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+" }}}

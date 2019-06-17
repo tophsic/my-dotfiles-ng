@@ -15,11 +15,12 @@
 
     " Affiche la limite de 80 caractères
     if v:version >= 703
-        set colorcolumn=81
+        set colorcolumn=80
     endif
 
     set completeopt=longest,menuone
 	set mouse=a
+    set hidden
 " }}}
 " Apparence {{{
     syntax on
@@ -63,6 +64,8 @@
     " Fixing indenting of HTML files
     autocmd FileType html setlocal indentkeys-=*<Return>
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+    let g:EditorConfig_core_mode = 'external_command'
 " }}}
 " Recherches {{{
     " Surligner les résultats de recherche
@@ -76,30 +79,42 @@
     " Rechercher sans tenir compte de la casse
     " (indépendant du précédent mais de priorité plus faible)
     set ignorecase
+
+    " Afficher les options au dessus de la ligne de commande
+    set wildmenu
+
+    " Ne pas afficher certains fichiers dans la recherche
+    set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+    set wildignore+=*.pdf,*.psd
+    set wildignore+=node_modules/*,bower_components/*
 " }}}
 " Sauvegardes {{{
-    set backup
+    "set backup
+    "set backupcopy=yes
 " }}}
 " Plugins {{{
     filetype plugin indent on
+    filetype plugin on
 " }}}
 " {{{ Invisibles chars
 nmap <leader>1 :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 " }}}
 " Syntastic {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_loc_list_height = 2
 " }}}
 " Dev {{{
 set foldmethod=marker
 set nu
+let NERDTreeQuitOnOpen = 1
 " }}}
 " Local {{{
 let local_vim=vimfiles . "/local.vim"
