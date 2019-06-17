@@ -75,8 +75,8 @@ noremap È 0
 noremap C ^
 noremap R g_
 
-map ; :call DmenuOpen("tabe")<cr>
-map € :call DmenuOpen("e")<cr>
+"map ; :call DmenuOpen("tabe")<cr>
+"map € :call DmenuOpen("e")<cr>
 
 map àà :ls<cr>
 map "" :cn<cr>
