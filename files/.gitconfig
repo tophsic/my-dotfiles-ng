@@ -1,6 +1,7 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore_global
+    pager = less -F -X
 [color]
     branch = auto
     status = auto
@@ -29,7 +30,7 @@
     svn-update = !sh -c 'git stash save "Pre svn-up stash" && git svn rebase && git stash pop'
     fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
     create = "!f(){ git init \"$@\"; if [ -n $@ ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
-    bmd = "!f(){ git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d; };f"
+    bmd = "!f(){ git branch --merged | grep -v "\\*" | grep -v "master" | xargs -n 1 git branch -d; };f"
 [diff]
     tool = vimdiff
 [merge]
@@ -38,4 +39,6 @@
 [difftool]
     prompt = false
 [push]
-	default = current
+    default = current
+[pull]
+    rebase = true

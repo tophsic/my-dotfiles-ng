@@ -5,3 +5,8 @@ _book
 /.tmp/
 /node_modules
 *.pyc
+/logistic-ftp
+npm-debug.log
+.composer
+.env
+debug.sql
