@@ -1,0 +1,12 @@
+---
+
+packages_to_install:
+  - tmux
+  - git
+  - vim
+  - zsh
+  - git
+  - exuberant-ctags
+  - mongodb-clients
+  - keepassx
+  - docker-engine
