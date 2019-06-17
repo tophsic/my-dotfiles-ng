@@ -1,0 +1,22 @@
+snippet template "Template" b
+<template name="${1:template}">
+</template>
+endsnippet
+
+snippet each "each" b
+{{#each ${2}${1:items}}}
+  ${3}
+{{/each}}
+endsnippet
+
+
+snippet text "Text input field" b
+<div class="form-group">
+    <label for="${1:field}">${2:label}</label>
+    <input type="text"
+            id="$1"
+            class="form-control"
+            value="{{$1}}"
+            >
+</div>${3}
+endsnippet
