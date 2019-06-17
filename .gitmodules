@@ -40,9 +40,6 @@
 [submodule "files/.vim/bundle/vim-jade"]
 	path = files/.vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "files/.vim/bundle/vim-easytags"]
-	path = files/.vim/bundle/vim-easytags
-	url = https://github.com/xolox/vim-easytags
 [submodule "files/.vim/bundle/vim-misc"]
 	path = files/.vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
@@ -64,3 +61,6 @@
 [submodule "roles/ANXS.build-essential"]
 	path = roles/ANXS.build-essential
 	url = https://github.com/ANXS/build-essential.git
+[submodule "files/.vim/bundle/nerdcommenter"]
+	path = files/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
