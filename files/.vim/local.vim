@@ -47,3 +47,8 @@ let g:calendar_google_task = 1
 let g:UltiSnipsJumpForwardTrigger = "<c-l>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 " }}}
+" Tsuquyomi {{{
+let g:tsuquyomi_semicolon_import = 1
+let g:tsuquyomi_baseurl_import_path = 0
+let g:tsuquyomi_single_quote_import = 0
+" }}}

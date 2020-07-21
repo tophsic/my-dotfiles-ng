@@ -39,6 +39,18 @@ snippet iLink "Import default" b
 import { Link } from "react-router-dom"
 endsnippet
 
+snippet iCommon "Import common" b
+import ${1:`!p snip.rv = t[1][:1].capitalize() + t[1][1:]`} from "components/common/${1:loading}-v"
+endsnippet
+
+snippet iHelper "Import helper" b
+import ${1:helper} from "helpers/${1}"
+endsnippet
+
+snippet iImageHelper "Import helper" b
+import { image } from "helpers/media"
+endsnippet
+
 snippet iPanelDuck "Import default" b
 import { PanelDuck } from "@therealcodekraft/react-web-bootstrap"
 endsnippet
@@ -53,6 +65,10 @@ endsnippet
 
 snippet debug "Debug" b
 const debug = require('debug')('${1:debugvar}')
+endsnippet
+
+snippet ndebug "Debug" b
+const debug = require("debug")(__filename.replace(/^.*src\//, "").replace(/.js$/, "").replace(/\//g, ":"))
 endsnippet
 
 snippet d "Debug call" b
@@ -139,11 +155,25 @@ endsnippet
 
 # React snippets
 snippet rcomponent "React component" b
-import React from "react"
+import React from 'react'
 
-export default function ${1:Component}() {
-  return (<div>My component</div>)
+export default function ${1:`!p snip.rv = camel(snip.basename)`}() {
+	return (
+		${2:<div>$1</div>}
+	)
 }
+endsnippet
+
+snippet component "React component" b
+function ${1:Component}() {
+	return (
+		${2:<div>$1</div>}
+	)
+}
+endsnippet
+
+snippet bimport "Bootstrap import" b
+import ${1:Container} from 'react-bootstrap/$1'
 endsnippet
 
 snippet ex "Default export" b
@@ -197,9 +227,16 @@ import { ${1:duck} } from 'Ducks/${2:duck}'
 endsnippet
 
 snippet rcontainer "Redux container" b
+import React from "react"
 import { connect } from "react-redux"
 
 import ${1:Component} from "./${2:`!p snip.rv = snip.basename`}${3:-v}"
+
+class Container extends React.Component {
+	render() {
+		return <$1 />
+	}
+}
 
 const mapStateToProps = (state, ownProps) => ({
 })
@@ -207,9 +244,9 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)($1)
+export default connect(mapStateToProps, mapDispatchToProps)(Container)
 endsnippet
-# End Redux snipets
+# End Redux snippets
 
 snippet log "log" b
 console.log($1)
@@ -217,6 +254,10 @@ endsnippet
 
 snippet warn "warn" b
 console.warn($1)
+endsnippet
+
+snippet dir "dir" b
+console.dir($1, { depth: null })
 endsnippet
 
 snippet me "Me" b
@@ -243,3 +284,11 @@ snippet effect "useEffect hook" b
 useEffect(() => {
 }, [ ${1:var} ])
 endsnippet
+
+# Next snippets
+snippet link "Link" b
+<Link href="${1:to}">
+	<a>${2:To}</a>
+</Link>
+endsnippet
+# End Next snippets

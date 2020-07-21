@@ -1,6 +1,8 @@
 snippet php "PHP" b
 <?php
 
+declare(strict_types=1);
+
 ${1}
 endsnippet
 
@@ -29,8 +31,12 @@ snippet ec "Basic echo" b
 echo ${1} . PHP_EOL;
 endsnippet
 
-snippet elvp "ErrorLog And Var Export" b
-error_log(var_export( ${1:$menu}, true ) . PHP_EOL, 3, ${2:'../var/log/debug.log'});
+snippet ebr "echo with br" b
+echo ${1} . '<br/>' . PHP_EOL;
+endsnippet
+
+snippet elve "ErrorLog And Var Export" b
+error_log(var_export( ${1:$menu}, true ) . PHP_EOL, 3, '${2:../}${3:var/log/debug.log}');
 endsnippet
 
 snippet el "ErrorLog" b
