@@ -31,8 +31,9 @@
     fix-conflits = !vim $(git ls-files -u | cut -f2 | uniq | xargs echo)
     create = "!f(){ git init \"$@\"; if [ -n $@ ]; then cd \"$@\"; fi; git commit --allow-empty -m 'Initial commit'; };f"
     bmd = "!f(){ git branch --merged | grep -v "\\*" | grep -v "master" | xargs -n 1 git branch -d; };f"
-    com = "!f(){ git co master && git pull --rebase --prune && git bmd; };f"
+    com = "!f(){ git co master && git submodule update && git pull --rebase --prune && git bmd && git submodule update; };f"
     cod = "!f(){ git co develop && git pull --rebase --prune && git bmd; };f"
+    spp = "!f(){ git stash; git com; git stash pop; };f"
 [diff]
     tool = vimdiff
 [merge]
@@ -44,3 +45,5 @@
     default = current
 [pull]
     rebase = true
+[rerere]
+	enabled = true
