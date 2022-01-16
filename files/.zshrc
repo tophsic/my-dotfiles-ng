@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tophsic mapstime ssh-agent codekraft)
+plugins=(git tophsic mapstime ssh-agent codekraft kubectl)
 
 # User configuration
 
