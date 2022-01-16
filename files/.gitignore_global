@@ -11,3 +11,8 @@ npm-debug.log
 .env
 debug.sql
 local.vim
+yarn-error.log
+frontend-vet/storybook
+.vscode
+phpinfo.php
+*.code-workspace
